@@ -1,0 +1,262 @@
+:root {
+    --hotPink: #DC194A;
+    --sweetPink: #FE6598;
+    --softPink: #FFE6E1;
+    --cherryRed: #CF1E33;
+    --cherryGreen: #086223;
+    --textTeal: #054E5F;
+}
+
+
+html {
+    background: linear-gradient(90deg, rgba(228, 172, 181, 0.7) 0%, rgba(228, 172, 181, 0.7) 100%), url("/assets/backgrounds/redgingham.webp");
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    flex-wrap: wrap;
+
+
+    aspect-ratio: 16/9;
+}
+
+.box {
+    position: relative;
+    z-index: 0;
+    flex: 0 0 20%;
+    aspect-ratio: auto;
+    height: calc(100% / 3);
+}
+
+.corner {
+    display: flex;
+    overflow: hidden;
+
+    z-index: 2;
+    transition: transform .3s;
+}
+
+.corner:hover {
+    transform: scale(2);
+}
+
+.corner p {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    font-family: "Shrikhand", serif;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+}
+
+.filler {}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Shrikhand", serif;
+    text-align: center;
+}
+
+.text p {
+    color: var(--textTeal);
+}
+
+/* This is all for the title box lol */
+
+#title {
+    flex-flow: column nowrap;
+    font-size: 1.5rem;
+}
+
+#title div {
+    padding: 10px;
+}
+
+#title h1,
+#title p {
+    margin: 0;
+}
+
+#title h1 {
+    letter-spacing: -5px;
+}
+
+#title h1 span {
+    color: var(--cherryRed);
+    font-size: 2rem;
+    font-family: "Shrikhand", serif;
+
+    position: relative;
+    -webkit-text-stroke: .05em white;
+}
+
+#title h1 span::before {
+    content: attr(data-char);
+    position: absolute;
+    z-index: -1;
+    -webkit-text-stroke: 0.3em var(--cherryGreen);
+}
+
+/* ! WIP */
+
+#wipNotice {
+    font-size: 3.5rem;
+}
+
+/* ~ Keep it neat */
+
+.decor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.decor img {
+    max-width: 300px;
+}
+
+.softPink {
+    background-color: var(--softPink);
+
+    background-image:
+        radial-gradient(#F0FCF9 20.4%, transparent 25.6%),
+        radial-gradient(#F0FCF9 20.4%, transparent 25.6%);
+    background-position: 0px 0px, 64px 64px;
+    background-size: 128px 128px;
+}
+
+
+.corner:hover.softPink {
+    background-color: var(--softPink);
+
+    background-image:
+        radial-gradient(#F0FCF9 20.4%, transparent 25.6%),
+        radial-gradient(#F0FCF9 20.4%, transparent 25.6%);
+    background-position: 0px 0px, 44px 44px;
+    background-size: 88px 88px;
+}
+
+.hotPink {
+    background-color: var(--hotPink);
+}
+
+/* ! Marquee Boxes */
+
+.marquee {
+    position: relative;
+    overflow: hidden;
+
+    user-select: none;
+}
+
+.marquee-inner {
+    display: flex;
+    flex-direction: column;
+    transform: rotate(-45deg);
+}
+
+.marquee-row {
+    display: flex;
+    white-space: nowrap;
+    font-size: 3rem;
+    color: var(--sweetPink);
+    font-family: "Shrikhand", serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-row .text-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll linear infinite;
+}
+
+/* .marquee-row:nth-child(even) .text-track {
+    animation: scroll2 linear infinite;
+} */
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* @keyframes scroll2 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(50%);
+    }
+} */
+
+
+/* ! Each Corner is different! */
+
+.corner#b1 {
+    justify-content: center;
+    align-items: flex-start;
+    transform-origin: top left;
+
+    color: var(--textTeal);
+    -webkit-text-stroke: .1em white;
+}
+
+.corner#b1 img {
+    width: 500px;
+}
+
+.corner#b2 {
+    justify-content: center;
+    align-items: flex-start;
+    transform-origin: top right;
+
+    color: var(--textTeal);
+    -webkit-text-stroke: .1em white;
+}
+
+.corner#b2 img {
+    width: 500px;
+}
+
+.corner#b3 {
+    justify-content: center;
+    align-items: flex-start;
+    transform-origin: bottom left;
+
+    color: var(--textTeal);
+    -webkit-text-stroke: .1em white;
+}
+
+.corner#b3 img {
+    width: 500px;
+}
+
+.corner#b4 {
+    justify-content: center;
+    align-items: flex-start;
+    transform-origin: bottom right;
+
+    color: var(--textTeal);
+    -webkit-text-stroke: .1em white;
+}
+
+.corner#b4 img {
+    width: 500px;
+}
