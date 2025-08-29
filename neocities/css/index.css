@@ -87,6 +87,7 @@ body {
 }
 
 #title h1 {
+    position: relative;
     letter-spacing: -5px;
 }
 
